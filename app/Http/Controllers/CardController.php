@@ -391,7 +391,7 @@ class CardController extends Controller
 
 
         $this->mailArchive($path. '.zip');
-        @$this->delete_files('exports/cards/' . $this->zipName . '/');
+        // @$this->delete_files('exports/cards/' . $this->zipName . '/');
 
     }
 
