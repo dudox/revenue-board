@@ -78,7 +78,14 @@
                 <?php $entries = \App\Entry::sum('cost'); ?>
             @if($earners->count() > 0)
               @foreach($earners as $earner)
-              <?php $percent = ($earner->entries()->sum('cost') / $entries) * 100 ?>
+              <?php
+                if($earner->entries()->sum('cost') > 0) {
+                    $percent = ($earner->entries()->sum('cost') / $entries) * 100;
+                }
+                else {
+                    $percent = 0;
+                }
+                ?>
               <tr>
                 <th scope="row">
                   {{$earner->name}}
