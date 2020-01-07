@@ -182,7 +182,7 @@ class CardController extends Controller
 
     public function generate(int $limit)
     {
-        return strtoupper(substr(base_convert(sha1(uniqid(mt_rand())), 16, 36), 0, $limit));
+        return substr(rand(111111111111, 999999999999), 0, $limit);
     }
 
     public function ongoing(Batch $batch)
