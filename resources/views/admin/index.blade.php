@@ -76,6 +76,7 @@
             </thead>
             <tbody>
                 <?php $entries = \App\Entry::sum('cost'); ?>
+            @if($earners->count() > 0)
               @foreach($earners as $earner)
               <?php $percent = ($earner->entries()->sum('cost') / $entries) * 100 ?>
               <tr>
@@ -97,6 +98,7 @@
                 </td>
               </tr>
               @endforeach
+            @endif
             </tbody>
           </table>
         </div>
