@@ -76,7 +76,7 @@ class Process extends Controller
 
     public function renderErrorScreen()
     {
-        $message = "Invalid input format.\n Dial *347*800*1*cardnumber# to activate. \n And *347*800*2*cardnumber# to verify your card number";
+        $message = "Invalid input format.\n Dial *347*800*1*PIN# to activate. \n And *347*800*2*PIN# to verify your card number";
         echo $this->end($message);
         die;
     }
@@ -212,7 +212,7 @@ class Process extends Controller
                 $user = $card->batch->state->user->name;
                 $cost = number_format($card->denomination->cost, 2);
                 $expiryDate = date("d.m.Y.", strtotime($time->expiry));
-                $message = "Your revenue payment of {$cost} to {$user} was successful. \n Validity expires on {$expiryDate}";
+                $message = "Your revenue payment of {$cost} to {$user} was successful. \n Validity expires on {$expiryDate} \n Dial *347*800*2*PIN#  to check expiry date anytime.";
             }
         }
         echo $this->end($message);
