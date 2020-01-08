@@ -52,11 +52,11 @@
                                 </span>
                               </td> --}}
                               <td>
-                                {{$batch->entries()->count()}}
+                                {{number_format($batch->entries()->count())}}
                               </td>
                               <td>
                                 <div class="d-flex align-items-center">
-                                  <span class="mr-2">{{$batch->cards()->count()}}</span>
+                                  <span class="mr-2">{{number_format($batch->cards()->count())}}</span>
                                   <div>
                                   </div>
                                 </div>

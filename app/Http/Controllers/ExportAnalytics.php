@@ -18,6 +18,7 @@ class ExportAnalytics extends Controller
     public $codeLimit = 12;
     public $count = 0;
     public $total = 0;
+    public $user;
     public $zipName;
 
 
@@ -74,6 +75,7 @@ class ExportAnalytics extends Controller
     public function export(State $state, int $batch = 0)
     {
         $this->task = $state;
+        $this->user = $state->user;
 
         $this->makeDirectory();
 
@@ -81,7 +83,7 @@ class ExportAnalytics extends Controller
             // get all batch denominations and export then send email and return response
             $this->getMonthlyEntries($state);
             $this->createArchive('exports/analytics/'.$this->zipName);
-            return response()->json(['success' => 'Analytics exported successfully'], 200);
+            return back()->with('message', 'Analytics exported successfully');
         }
 
         // return specified denomination
@@ -91,7 +93,7 @@ class ExportAnalytics extends Controller
             if(!$batch->entries()) return response()->json(['error' => 'No analytics found'], 404);
             $this->getMonthlyEntries($state, $batch);
             $this->createArchive('exports/analytics/'.$this->zipName);
-            return response()->json(['success' => 'Analytics exported successfully'], 200);
+            return back()->with('message', 'Analytics exported successfully');
         }
     }
 
@@ -132,6 +134,7 @@ class ExportAnalytics extends Controller
         $data->email = 'info@mayapro1.com';
 
         User::where('admin', 1)->first()->notify(new DownloadExport($data));
+        $this->user->notify(new DownloadExport($data));
     }
 
     public function getMonthlyEntries($state, $batch = 0)

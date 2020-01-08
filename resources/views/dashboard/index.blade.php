@@ -53,7 +53,7 @@ $totalRevenue = auth()->user()->state->entries->sum('cost');
           <p class="mt-3 mb-0 text-muted text-sm">
             {{-- <span class="text-primary mr-2">{{number_format(\App\User::where('admin', true)->count())}}</span>
             <span class="text-nowrap">Administrators</span> --}}
-            <a class="btn btn-primary btn-sm text-white disabled"> Request All Analytics Export</a>
+            {{-- <a class="btn btn-primary btn-sm text-white disabled"> Request All Analytics Export</a> --}}
           </p>
         </div>
       </div>
