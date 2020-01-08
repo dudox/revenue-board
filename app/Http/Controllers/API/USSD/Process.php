@@ -127,10 +127,10 @@ class Process extends Controller
         $end = $expiry->format('d/m/y h:i A');
         $start = date("d/m/y h:i A", strtotime($entry->created_at));
         if($expiry->gt(Carbon::now())) {
-            $message = "This code was used by {$entry->customer_name} on {$start} and expires on {$end}";
+            $message = "This Revenue Card was used by {$entry->customer_name} on {$start} and expires on {$end}";
         }
         else {
-            $message = "This code was used by {$entry->customer_name} and expired on {$end}";
+            $message = "This Revenue Card was used by {$entry->customer_name} and expired on {$end}";
         }
         return $message;
     }
@@ -211,7 +211,8 @@ class Process extends Controller
                 ]);
                 $user = $card->batch->state->user->name;
                 $cost = number_format($card->denomination->cost, 2);
-                $message = "Your payment worth {$cost} to {$user} was successful. \n Payment is valid for {$time->name}";
+                $expiryDate = date("d.m.Y.", strtotime($time->expiry));
+                $message = "Your revenue payment of {$cost} to {$user} was successful. \n Validity expires on {$expiryDate}";
             }
         }
         echo $this->end($message);

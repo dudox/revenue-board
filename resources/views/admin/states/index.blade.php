@@ -16,7 +16,7 @@
               <tr>
                 <th scope="col">No</th>
                 <th scope="col">State</th>
-                <th scope="col">User</th>
+                <th scope="col">Revenue Board</th>
                 {{-- <th scope="col">Status</th> --}}
                 <th scope="col">Used Cards</th>
                 <th scope="col">Total Cards</th>

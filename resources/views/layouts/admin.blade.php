@@ -110,11 +110,11 @@
           <a class=" nav-link {{$name == 'admin' ? 'active' : ''}} " href="{{route('admin')}}"> <i class="ni ni-tv-2 text-primary"></i> Dashboard
             </a>
           </li>
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a class="nav-link {{$name == 'states' ? 'active' : ''}}" href="{{route('states')}}">
               <i class="ni ni-planet text-blue"></i> States
             </a>
-          </li>
+          </li> --}}
           <li class="nav-item">
             <a class="nav-link {{$name == 'exports' ? 'active' : ''}}" href="{{route('exports')}}">
               <i class="ni ni-pin-3 text-orange"></i> Exports
@@ -127,7 +127,7 @@
           </li> --}}
           <li class="nav-item">
             <a class="nav-link {{$name == 'users' ? 'active' : ''}}" href="{{route('users')}}">
-              <i class="ni ni-circle-08 text-pink"></i> Users
+              <i class="ni ni-circle-08 text-pink"></i> Revenue Boards
             </a>
           </li>
         </ul>
@@ -225,7 +225,7 @@
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">Revenue Agencies</h5>
+                      <h5 class="card-title text-uppercase text-muted mb-0">State Revenue Boards</h5>
                         <span class="h2 font-weight-bold mb-0">{{number_format($agencies)}}</span>
                     </div>
                     <div class="col-auto">

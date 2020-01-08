@@ -78,7 +78,7 @@ class StatesTableSeeder extends Seeder
             ],
             [
                 'name' => 'Imo',
-                'user_id' => null,
+                'user_id' => 17,
             ],
             [
                 'name' => 'Jigawa',
