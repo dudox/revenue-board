@@ -18,67 +18,67 @@ class StatesTableSeeder extends Seeder
             ],
             [
                 'name' => 'Abuja',
-                'user_id' => 2,
+                'user_id' => null,
             ],
             [
                 'name' => 'Adamawa',
-                'user_id' => 3,
+                'user_id' => null,
             ],
             [
                 'name' => 'Akwa Ibom',
-                'user_id' => 4,
+                'user_id' => null,
             ],
             [
                 'name' => 'Anambra',
-                'user_id' => 5,
+                'user_id' => null,
             ],
             [
                 'name' => 'Bauchi',
-                'user_id' => 6,
+                'user_id' => null,
             ],
             [
                 'name' => 'Bayelsa',
-                'user_id' => 7,
+                'user_id' => null,
             ],
             [
                 'name' => 'Benue',
-                'user_id' => 8,
+                'user_id' => null,
             ],
             [
                 'name' => 'Borno',
-                'user_id' => 9,
+                'user_id' => null,
             ],
             [
                 'name' => 'Cross River',
-                'user_id' => 10,
+                'user_id' => null,
             ],
             [
                 'name' => 'Delta',
-                'user_id' => 11,
+                'user_id' => null,
             ],
             [
                 'name' => 'Ebonyi',
-                'user_id' => 12,
+                'user_id' => null,
             ],
             [
                 'name' => 'Edo',
-                'user_id' => 13,
+                'user_id' => null,
             ],
             [
                 'name' => 'Ekiti',
-                'user_id' => 14,
+                'user_id' => null,
             ],
             [
                 'name' => 'Enugu',
-                'user_id' => 15,
+                'user_id' => null,
             ],
             [
                 'name' => 'Gombe',
-                'user_id' => 16,
+                'user_id' => null,
             ],
             [
                 'name' => 'Imo',
-                'user_id' => 17,
+                'user_id' => null,
             ],
             [
                 'name' => 'Jigawa',
