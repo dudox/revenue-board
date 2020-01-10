@@ -8,6 +8,7 @@ use App\Screen;
 use App\State;
 use Illuminate\Http\Request;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
@@ -46,12 +47,35 @@ class HomeController extends Controller
 
     public function commission()
     {
+
         $inputs = auth()->user()->state->entries();
+        $john = auth()->user()->state->entries();
+
+        if(request('from') && request('to')) {
+            $now = new Carbon(request('from'));
+            $later = new Carbon(request('to'));
+            $inputs->whereBetween('created_at', [$now->format('Y-m-d')." 00:00:00", $later->format('Y-m-d')." 23:59:59"]);
+            $john->whereBetween('created_at', [$now->format('Y-m-d')." 00:00:00", $later->format('Y-m-d')." 23:59:59"]);
+        }
+
+        if(request('batch')) {
+            $inputs->where('batch_id', request('batch'));
+            $john->where('batch_id', request('batch'));
+        }
+
+        if(request('denomination')) {
+            $inputs->where('denomination_id', request('denomination'));
+            $john->where('denomination_id', request('denomination'));
+        }
+
         $entryPerMonth= array();
+
         for ($i=1; $i<=12; $i++){
             $entryPerMonth[] = number_format($inputs->whereMonth('created_at', date('m',strtotime('-'.$i.' month')))->sum('cost'));
         }
-        $entries = $inputs->paginate(20);
+
+        $entries = $john->paginate(20);
+
         return view('dashboard.index')
             ->with('entryPerMonth', $entryPerMonth)
             ->with('entries', $entries);

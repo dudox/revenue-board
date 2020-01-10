@@ -107,6 +107,7 @@ $totalRevenue = auth()->user()->state->entries->sum('cost');
 @endsection
 
 @section('content')
+@include('dashboard.partials.search')
 <div class="row">
     <div class="col-xl-12 mb-5 mb-xl-0">
       <div class="card bg-gradient-default shadow">
@@ -114,7 +115,7 @@ $totalRevenue = auth()->user()->state->entries->sum('cost');
           <div class="row align-items-center">
             <div class="col">
               <h6 class="text-uppercase text-light ls-1 mb-1">Overview</h6>
-              <h2 class="text-white mb-0">Monthly Revenue Chart</h2>
+              <h2 class="text-white mb-0">Revenue Performance</h2>
             </div>
           </div>
         </div>
@@ -152,6 +153,7 @@ $totalRevenue = auth()->user()->state->entries->sum('cost');
           </thead>
           <tbody>
               <?php $count = 1 + $entries->currentPage() * $entries->perPage() - $entries->perPage(); ?>
+
               @if($entries->count() > 0)
                   @foreach($entries as $entry)
 
