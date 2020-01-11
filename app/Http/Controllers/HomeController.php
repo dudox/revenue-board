@@ -69,12 +69,12 @@ class HomeController extends Controller
         }
 
         $entryPerMonth= array();
-
+        // dd($inputs->whereMonth('created_at', "12")->sum("cost"));
         for ($i=1; $i<=12; $i++){
-            $h[] = date('m',strtotime('-'.$i.' month'));
-            $entryPerMonth[] = number_format($inputs->whereMonth('created_at', date('m',strtotime('-'.$i.' month')))->sum('cost'));
+            $h[] = (string)$i;
+            $entryPerMonth[] = $inputs->whereMonth('created_at', (string)$i)->sum("cost");
         }
-        dd($h);
+        dd($entryPerMonth, $h);
 
 
         $entries = $john->paginate(20);
