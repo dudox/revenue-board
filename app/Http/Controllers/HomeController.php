@@ -74,7 +74,7 @@ class HomeController extends Controller
             $h[] = (string)$i;
             $entryPerMonth[] = $inputs->whereMonth('created_at', (string)$i)->sum("cost");
         }
-        dd($entryPerMonth, $h);
+        // dd($entryPerMonth, $h);
 
 
         $entries = $john->paginate(20);
