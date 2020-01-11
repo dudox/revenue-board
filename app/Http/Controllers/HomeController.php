@@ -71,10 +71,11 @@ class HomeController extends Controller
         $entryPerMonth= array();
 
         for ($i=1; $i<=12; $i++){
+            dd(date('m',strtotime('-'.$i.' month')));
             $entryPerMonth[] = number_format($inputs->whereMonth('created_at', date('m',strtotime('-'.$i.' month')))->sum('cost'));
         }
 
-        dd($entryPerMonth);
+
 
         $entries = $john->paginate(20);
 
