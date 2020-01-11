@@ -74,6 +74,8 @@ class HomeController extends Controller
             $entryPerMonth[] = number_format($inputs->whereMonth('created_at', date('m',strtotime('-'.$i.' month')))->sum('cost'));
         }
 
+        dd($entryPerMonth);
+
         $entries = $john->paginate(20);
 
         return view('dashboard.index')
