@@ -9,6 +9,7 @@ $totalCards = \App\Http\Controllers\CardController::getUsedCards(auth()->user())
 $weeklyCards = \App\Http\Controllers\CardController::userWeeklyCards(auth()->user());
 $weeklyRevenue = \App\Http\Controllers\CardController::allWeeklyEntries()->where('state_id', auth()->user()->state->id)->sum('cost');
 $totalRevenue = auth()->user()->state->entries->sum('cost');
+$url = url('/api/denominations')
 ?>
 <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
 <div class="container-fluid">
@@ -213,6 +214,52 @@ $totalRevenue = auth()->user()->state->entries->sum('cost');
   </div>
   @endsection
   @section('script')
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type='text/javascript'>
+
+    $(document).ready(function(){
+
+      // Department Change
+      $('#sel_depart').change(function(){
+
+         // Department id
+         var id = $(this).val();
+         var url = {!! json_encode($url) !!};
+         // Empty the dropdown
+         $('#sel_emp').find('option').not(':first').remove();
+
+         // AJAX request
+         $.ajax({
+           url: url + '/' + id,
+           type: 'get',
+           dataType: 'json',
+           success: function(response){
+
+             var len = 0;
+             if(response['success'] != null){
+               len = response['success'].length;
+             }
+
+             if(len > 0){
+               // Read data and create <option >
+               for(var i=0; i<len; i++){
+
+                 var id = response['success'][i].id;
+                 var name = response['success'][i].cost;
+
+                 var option = "<option value='"+id+"'>"+name+"</option>";
+
+                 $("#sel_emp").html(option);
+               }
+             }
+
+           }
+        });
+      });
+
+    });
+
+    </script>
     <script>
 
         var SalesChart = (function() {

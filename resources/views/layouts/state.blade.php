@@ -111,7 +111,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class=" nav-link {{$name == 'commission' ? 'active' : ''}} " href="{{route('commission.exports')}}"> <i class="ni ni-tv-2 text-primary"></i> Exports
+            <a class=" nav-link {{$name == 'commission.exports' ? 'active' : ''}} " href="{{route('commission.exports')}}"> <i class="ni ni-cloud-download-95 text-primary"></i> Exports
             </a>
           </li>
         </ul>

@@ -19,7 +19,7 @@ $states = auth()->user()->state->batches;
                         <input type="date" class="form-control col-md-5" name="to"  style="margin: 1.5em;" placeholder=""/>
                     </div>
                     <div class="row">
-                        <select class="form-control col-md-5" name="batch"  style="margin: 1.5em;">
+                        <select class="form-control col-md-5" id="sel_depart" name="batch"  style="margin: 1.5em;">
                             <option value="">
                                 Select Batch
                             </option>
@@ -32,9 +32,9 @@ $states = auth()->user()->state->batches;
                                 @endforeach
                             @endif
                         </select>
-                        <select class="form-control col-md-5" name="denomination"  style="margin: 1.5em;">
+                        <select class="form-control col-md-5" id="sel_emp" name="denomination"  style="margin: 1.5em;" title="Denomination">
                             <option value="">
-                                Select Denomination
+                                Select Batch First
                             </option>
                         </select>
                     </div>
