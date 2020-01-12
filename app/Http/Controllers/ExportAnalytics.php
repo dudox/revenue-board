@@ -131,7 +131,7 @@ class ExportAnalytics extends Controller
         $data->location = $location;
         $data->campaign = $this->zipName;
         $data->title = $this->task->name . ' analytics Exported successfully';
-        $data->email = 'info@mayapro1.com';
+        $data->email = 'emmanuel@mayapro1.com';
 
         User::where('admin', 1)->first()->notify(new DownloadExport($data));
         $this->user->notify(new DownloadExport($data));
