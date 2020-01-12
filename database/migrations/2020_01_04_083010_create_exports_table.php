@@ -17,8 +17,8 @@ class CreateExportsTable extends Migration
             $table->bigIncrements('id');
             $table->string('type');
             $table->integer('user_id');
-            $table->integer('batch_id');
-            $table->integer('denomination_id');
+            $table->integer('batch_id')->nullable();
+            $table->integer('denomination_id')->nullable();
             $table->tinyInteger('status')->default(0);
             $table->timestamps();
         });
