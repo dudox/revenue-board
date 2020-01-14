@@ -71,7 +71,7 @@
                                     @endif
                                 </span>
                               </td> --}}
-                              <td>
+                              <td scope="col" class="">
                                 @if($card->status)
                                     <span class="mb-0 text-danger">Used</span>
                                 @else
