@@ -37,8 +37,8 @@
   <div class="main-content">
     <!-- Navbar -->
     <!-- Header -->
-    <div class="container">
-    <div class="header-body text-center mb-0 py-5">
+    <div class="container mt--1">
+    <div class="header-body text-center mb-0 py-6">
         <div class="row justify-content-center">
         <div class="col-lg-12 col-md-12">
             <img src="../assets/img/brand/blue.svg" width="150em" height="150em" />
@@ -49,7 +49,7 @@
     </div>
 
     <!-- Page content -->
-    <div class="container mt--4 ">
+    <div class="container mt--4">
       <div class="row justify-content-center">
         <div class="col-lg-5 col-md-7">
           <div class="card bg-secondary shadow border-0">
