@@ -65,7 +65,7 @@
       </div>
     </nav>
     <!-- Header -->
-    <div class="header bg-gradient-primary py-4 py-lg-8">
+    <div class="header bg-gradient-primary py-1 py-lg-8">
       <div class="container">
         <div class="header-body text-center mb-2">
           <div class="row justify-content-center">
@@ -135,7 +135,7 @@
         </div>
       </div>
     </div>
-    <footer class="py-5">
+    <footer class="py-3">
       <div class="container">
         <div class="row align-items-center justify-content-xl-between">
           <div class="col-xl-6">
