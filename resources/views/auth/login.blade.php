@@ -52,7 +52,7 @@
     <div class="container mt--5">
       <div class="row justify-content-center">
         <div class="col-lg-5 col-md-7">
-          <div class="card bg-secondary shadow border-0">
+          <div class="card bg-primary shadow border-0">
             <div class="card-body px-lg-5 py-lg-5">
               <form role="form" method="POST" action="{{route('login')}}">
                 @csrf
