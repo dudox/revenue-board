@@ -18,7 +18,7 @@ use ZanySoft\Zip\Zip;
 
 class CardController extends Controller
 {
-    public $arrayLimit = 1000;
+    public $arrayLimit = 100000;
     public $codeLimit = 12;
     public $count = 0;
     public $total = 0;
@@ -331,7 +331,7 @@ class CardController extends Controller
             if(!$denomination->cards()) return response()->json(['error' => 'No cards found'], 404);
             $this->exportDenomination($denomination);
             $this->createArchive('exports/cards/'.$this->zipName);
-            return response()->json(['success' => 'Cards exported successfully'], 200);
+            return back()->with('message', 'Cards exported successfully');
         }
     }
 
