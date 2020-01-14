@@ -43,7 +43,7 @@
       </button>
       <!-- Brand -->
       <a class="pt-1" href="" class="">
-        <img src="{{config("APP_URL")}}/assets/img/brand/blue.svg" style="margin: auto;" width="130em" height="130em">
+        <img src="{{config("APP_URL")}}/assets/img/brand/blue.svg" style="margin-left: 1.4em;" width="130em" height="130em">
       </a>
       <!-- User -->
       <ul class="nav align-items-center d-md-none">
