@@ -37,9 +37,9 @@
   <div class="main-content">
     <!-- Navbar -->
     <nav class="navbar navbar-top navbar-horizontal navbar-expand-md navbar-dark">
-      <div class="container px-4">
+      <div class="container px-3">
         <a class="navbar-brand" href="../index.html">
-          <img src="../assets/img/brand/blue.png" />
+
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse-main" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -65,12 +65,13 @@
       </div>
     </nav>
     <!-- Header -->
-    <div class="header bg-gradient-primary py-7 py-lg-8">
+    <div class="header bg-gradient-primary py-4 py-lg-8">
       <div class="container">
-        <div class="header-body text-center mb-4">
+        <div class="header-body text-center mb-2">
           <div class="row justify-content-center">
             <div class="col-lg-5 col-md-6">
-              <h1 class="text-white">Welcome!</h1>
+                <img src="../assets/img/brand/blue.svg" width="200em" height="200em" />
+              {{-- <h1 class="text-white">Welcome!</h1> --}}
             </div>
           </div>
         </div>
@@ -139,7 +140,7 @@
         <div class="row align-items-center justify-content-xl-between">
           <div class="col-xl-6">
             <div class="copyright text-center text-xl-left text-muted">
-              © {{date("Y", time())}} <a href="https://www.mayapro1.com" class="font-weight-bold ml-1" target="_blank">Mayapro1</a>
+              © {{date("Y", time())}} <a href="https://www.mayapro1.com" class="font-weight-bold ml-1" target="_blank">Mayapro1 Limited</a>
             </div>
           </div>
         </div>

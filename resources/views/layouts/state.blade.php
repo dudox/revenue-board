@@ -43,6 +43,7 @@
       </button>
       <!-- Brand -->
       <a class="navbar-brand pt-0" href="./index.html">
+        <img src="{{config("APP_URL")}}/assets/img/brand/blue.svg" />
         <img src="{{config("APP_URL")}}/assets/img/brand/mayapro_logo2.png" class="navbar-brand-img" alt="...">
       </a>
       <!-- User -->
@@ -82,7 +83,8 @@
           <div class="row">
             <div class="col-6 collapse-brand">
               <a href="./index.html">
-                <img src="{{config("APP_URL")}}/assets/img/brand/blue.png">
+                <img src="{{config("APP_URL")}}/assets/img/brand/blue.svg" />
+                <img src="{{config("APP_URL")}}/assets/img/brand/blue.png" />
               </a>
             </div>
             <div class="col-6 collapse-close">
@@ -177,7 +179,7 @@
         <div class="row align-items-center justify-content-xl-between">
           <div class="col-xl-6">
             <div class="copyright text-center text-xl-left text-muted">
-              &copy; {{date("Y", time())}} <a href="https://www.mayapro1.com" class="font-weight-bold ml-1" target="_blank">Mayapro1</a>
+              &copy; {{date("Y", time())}} <a href="https://www.mayapro1.com" class="font-weight-bold ml-1" target="_blank">Mayapro1 Limited</a>
             </div>
           </div>
         </div>
