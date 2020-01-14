@@ -139,7 +139,7 @@
       <div class="container">
         <div class="row align-items-center justify-content-xl-between">
           <div class="col-xl-6">
-            <div class="copyright text-center text-xl-left text-muted">
+            <div class="copyright text-center text-xl-left text-white">
               © {{date("Y", time())}} <a href="https://www.mayapro1.com" class="font-weight-bold ml-1 text-white" target="_blank">Mayapro1 Limited</a>
             </div>
           </div>
