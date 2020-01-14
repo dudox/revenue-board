@@ -48,6 +48,7 @@ class Process extends Controller
                 // Verify user card
                 $this->checkValidity();
             }
+            $this->checkCard();
             $this->renderNameEntry();
         }
 
@@ -218,4 +219,19 @@ class Process extends Controller
         echo $this->end($message);
         die;
     }
+
+    public function checkCard()
+    {
+        $message = 'You have entered an Invalid Revenue Code';
+        $card = Card::where('code', $this->text[1])->first();
+        if($card) {
+            if($card->status) {
+                $message = 'You have entered a used Revenue Code';
+            }
+            echo $this->end($message);
+            die;
+        }
+    }
+
+
 }
