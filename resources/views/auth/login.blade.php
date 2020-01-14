@@ -52,7 +52,7 @@
     <div class="container mt--5">
       <div class="row justify-content-center">
         <div class="col-lg-5 col-md-7">
-          <div class="card bg-primary shadow border-1">
+          <div class="card bg-primary">
             <div class="card-body px-lg-5 py-lg-5">
               <form role="form" method="POST" action="{{route('login')}}">
                 @csrf
@@ -85,7 +85,7 @@
                   </div>
                 </div>
                 <div class="text-center">
-                  <button type="submit" class="btn btn-primary my-4">Sign in</button>
+                  <button type="submit" class="btn btn-white my-4 text-primary">Sign in</button>
                 </div>
               </form>
             </div>
