@@ -34,7 +34,7 @@
 </head>
 
 <body class="bg-gradient-primary">
-  <div class="main-content py-4">
+  <div class="main-content py-5">
     <!-- Navbar -->
     <!-- Header -->
     <div class="container mt--1">
@@ -49,7 +49,7 @@
     </div>
 
     <!-- Page content -->
-    <div class="container mt--5">
+    <div class="container mt--6">
       <div class="row justify-content-center">
         <div class="col-lg-5 col-md-7">
           <div class="card bg-primary" style="border: none;">
