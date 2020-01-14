@@ -34,7 +34,7 @@
 </head>
 
 <body class="bg-gradient-primary">
-  <div class="main-content py-3">
+  <div class="main-content py-4">
     <!-- Navbar -->
     <!-- Header -->
     <div class="container mt--1">
