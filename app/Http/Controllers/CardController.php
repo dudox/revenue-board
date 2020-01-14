@@ -322,7 +322,7 @@ class CardController extends Controller
             // get all batch denominations and export then send email and return response
             $this->exportAll($batch);
             $this->createArchive('exports/cards/'.$this->zipName);
-            return response()->json(['success' => 'Cards exported successfully'], 200);
+            return back()->with('message', 'Cards exported successfully');
         }
 
         // return specified denomination
