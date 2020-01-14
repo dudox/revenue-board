@@ -33,7 +33,7 @@
   <link href="../assets/css/argon-dashboard.css?v=1.1.0" rel="stylesheet" />
 </head>
 
-<body class="bg-default">
+<body class="bg-gradient-primary">
   <div class="main-content">
     <!-- Navbar -->
     <nav class="navbar navbar-top navbar-horizontal navbar-expand-md navbar-dark">
@@ -77,13 +77,13 @@
         </div>
       </div>
       <div class="separator separator-bottom separator-skew zindex-100">
-        <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        {{-- <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
           <polygon class="fill-default" points="2560 0 2560 100 0 100"></polygon>
-        </svg>
+        </svg> --}}
       </div>
     </div>
     <!-- Page content -->
-    <div class="container mt--8 pb-5">
+    <div class="container mt--8">
       <div class="row justify-content-center">
         <div class="col-lg-5 col-md-7">
           <div class="card bg-secondary shadow border-0">
@@ -140,7 +140,7 @@
         <div class="row align-items-center justify-content-xl-between">
           <div class="col-xl-6">
             <div class="copyright text-center text-xl-left text-muted">
-              © {{date("Y", time())}} <a href="https://www.mayapro1.com" class="font-weight-bold ml-1" target="_blank">Mayapro1 Limited</a>
+              © {{date("Y", time())}} <a href="https://www.mayapro1.com" class="font-weight-bold ml-1 text-white" target="_blank">Mayapro1 Limited</a>
             </div>
           </div>
         </div>
