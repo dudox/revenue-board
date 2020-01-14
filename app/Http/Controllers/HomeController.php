@@ -30,11 +30,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $earners = State::with('entries')->get()->sortBy(function($earner)
-        {
-            return $earner->entries->count();
-        },  $options = SORT_REGULAR, $descending = true);
+        // $earners = State::with('entries')->get()->sortBy(function($earner)
+        // {
+        //     return $earner->entries->count();
+        // },  $options = SORT_REGULAR, $descending = true);
 
+        $earners = State::with('entries')->orderBy('name', 'ASC')->get();
         // dd($earners);
 
         $screenOne = Screen::where('type', 1)->first();
