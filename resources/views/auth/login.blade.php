@@ -67,20 +67,20 @@
     <!-- Header -->
     <div class="header bg-gradient-primary py-1 py-lg-8">
       <div class="container">
-        <div class="header-body text-center mb-2">
+        <div class="header-body text-center mb-3">
           <div class="row justify-content-center">
             <div class="col-lg-5 col-md-6">
-                <img src="../assets/img/brand/blue.svg" width="200em" height="200em" />
-              {{-- <h1 class="text-white">Welcome!</h1> --}}
+                <img src="../assets/img/brand/blue.svg" width="150em" height="150em" />
+              <h3 class="text-white">States internal revenue services reporting dashboard</h3>
             </div>
           </div>
         </div>
       </div>
-      <div class="separator separator-bottom separator-skew zindex-100">
-        {{-- <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      {{-- <div class="separator separator-bottom separator-skew zindex-100">
+        <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
           <polygon class="fill-default" points="2560 0 2560 100 0 100"></polygon>
-        </svg> --}}
-      </div>
+        </svg>
+      </div> --}}
     </div>
     <!-- Page content -->
     <div class="container mt--8">
@@ -135,10 +135,10 @@
         </div>
       </div>
     </div>
-    <footer class="py-3">
+    <footer class="py-4">
       <div class="container">
         <div class="row align-items-center justify-content-xl-between">
-          <div class="col-xl-6">
+          <div class="col-xl-12">
             <div class="copyright text-center text-xl-left text-white">
               © {{date("Y", time())}} <a href="https://www.mayapro1.com" class="font-weight-bold ml-1 text-white" target="_blank">Mayapro1 Limited</a>
             </div>
