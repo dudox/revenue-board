@@ -17,7 +17,7 @@ class StatesTableSeeder extends Seeder
                 'user_id' => null,
             ],
             [
-                'name' => 'Abuja',
+                'name' => 'FCT',
                 'user_id' => null,
             ],
             [
