@@ -84,7 +84,7 @@ class ExportAnalytics extends Controller
             // get all batch denominations and export then send email and return response
             $this->getMonthlyEntries($state);
             $this->createArchive('exports/analytics/'.$this->zipName);
-            Export::where('user_id', $this->user->id)->update('status', 1);
+            Export::where('user_id', $this->user->id)->update(['status' => 1]);
             return back()->with('message', 'Analytics exported successfully');
         }
 
@@ -95,7 +95,7 @@ class ExportAnalytics extends Controller
             if(!$batch->entries()) return response()->json(['error' => 'No analytics found'], 404);
             $this->getMonthlyEntries($state, $batch);
             $this->createArchive('exports/analytics/'.$this->zipName);
-            Export::where('user_id', $this->user->id)->update('status', 1);
+            Export::where('user_id', $this->user->id)->update(['status' => 1]);
             return back()->with('message', 'Analytics exported successfully');
         }
     }
@@ -137,7 +137,7 @@ class ExportAnalytics extends Controller
         $data->email = 'emmanuel@mayapro1.com';
 
         User::where('admin', 1)->first()->notify(new DownloadExport($data));
-        $this->user->notify(new DownloadExport($data));
+        // $this->user->notify(new DownloadExport($data));
     }
 
     public function getMonthlyEntries($state, $batch = 0)
