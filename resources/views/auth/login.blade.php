@@ -38,24 +38,18 @@
     <!-- Navbar -->
     <!-- Header -->
     <div class="container">
-    <div class="header-body text-center mb-4">
+    <div class="header-body text-center mb-0 py-5">
         <div class="row justify-content-center">
         <div class="col-lg-12 col-md-12">
             <img src="../assets/img/brand/blue.svg" width="150em" height="150em" />
-            <h3 class="text-white">States Internal Revenue Services Reporting Dashboard</h3>
+            <h1 class="text-white">States Internal Revenue Services Reporting Dashboard</h1>
         </div>
         </div>
     </div>
     </div>
-    <div class="header bg-gradient-primary py-1 py-lg-7">
-      {{-- <div class="separator separator-bottom separator-skew zindex-100">
-        <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
-          <polygon class="fill-default" points="2560 0 2560 100 0 100"></polygon>
-        </svg>
-      </div> --}}
-    </div>
+
     <!-- Page content -->
-    <div class="container mt--8">
+    <div class="container mt--1 ">
       <div class="row justify-content-center">
         <div class="col-lg-5 col-md-7">
           <div class="card bg-secondary shadow border-0">
