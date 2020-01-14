@@ -47,6 +47,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
         Route::get('/create', 'UserController@create')->name('users.create');
         Route::post('/store', 'UserController@store')->name('users.store');
         Route::post('/{user}', 'UserController@resetPassword')->name('users.password.reset');
+        Route::post('/analytics/{state}', 'UserController@deleteAnalytics')->name('users.analytics.reset');
         Route::get('/{user}', 'UserController@show')->name('users.show');
         Route::get('/activate/{user}', 'UserController@activate')->name('users.activate');
         Route::get('/ban/{user}', 'UserController@ban')->name('users.ban');

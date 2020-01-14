@@ -28,12 +28,23 @@
                     @if(session('message'))
                         <p class="text-success">{{session('message')}}</p>
                     @endif
+                    @if(session('error'))
+                        <p class="text-danger">{{session('error')}}</p>
+                    @endif
                   <form role="form" method="POST" action="{{route('users.password.reset', $user->id)}}">
                       @csrf
                     <div class="text-center">
                       <button type="submit" class="btn btn-primary my-4">Set New Pin</button>
                     </div>
-                  </form>
+                  </form><br />
+
+                  <form role="form" method="POST" action="{{route('users.analytics.reset', $user->state->id)}}">
+                    @csrf
+                  <div class="text-center">
+                    <input class="form-control" name="confirm" placeholder="Type 'confirm' to continue"/> <br />
+                    <button type="submit" class="btn btn-danger my-4 text-white">Clear Analytics</button>
+                  </div>
+                </form>
                 </div>
               </div>
             </div>

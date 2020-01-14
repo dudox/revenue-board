@@ -69,4 +69,11 @@ class UserController extends Controller
 
         return redirect()->route('users.show', $user->id)->with('message', 'User disabled');
     }
+
+    public function deleteAnalytics(State $state)
+    {
+        if(!request('confirm') || request('confirm') !== 'confirm') return back()->with('error', 'Please input confirm to acknowledge action');
+        $state->entries()->delete();
+        return back()->with('message', 'All analytics cleared');
+    }
 }

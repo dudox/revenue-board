@@ -213,7 +213,7 @@ class Process extends Controller
                 $user = $card->batch->state->user->name;
                 $cost = number_format($card->denomination->cost, 2);
                 $expiryDate = date("d.m.Y.", strtotime($time->expiry));
-                $message = "Your revenue payment of {$cost} to {$user} was successful. \n Validity expires on {$expiryDate} \n Dial *347*800*2*PIN#  to check expiry date anytime.";
+                $message = "Your revenue payment of {$cost} to {$user} was successful. \n Valid until {$expiryDate} \n Dial *347*800*2*PIN#  to check expiry date anytime.";
             }
         }
         echo $this->end($message);
