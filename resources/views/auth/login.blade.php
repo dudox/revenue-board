@@ -42,17 +42,17 @@
         <div class="row justify-content-center">
         <div class="col-lg-12 col-md-12">
             <img src="../assets/img/brand/blue.svg" width="150em" height="150em" />
-            <h1 class="text-white">States Internal Revenue Services Reporting Dashboard</h1>
+            <h1 class="text-white" style="position: relative; z-index: 100;">States Internal Revenue Services Reporting Dashboard</h1>
         </div>
         </div>
     </div>
     </div>
 
     <!-- Page content -->
-    <div class="container mt--6">
+    <div class="container mt--7">
       <div class="row justify-content-center">
         <div class="col-lg-5 col-md-7">
-          <div class="card bg-primary" style="border: none;">
+          <div class="card bg-primary" style="border: none;z-index: 10;">
             <div class="card-body px-lg-5 py-lg-5">
               <form role="form" method="POST" action="{{route('login')}}">
                 @csrf
