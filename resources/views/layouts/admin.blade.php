@@ -215,8 +215,8 @@
                     </div>
                   </div>
                   <p class="mt-3 mb-0 text-muted text-sm">
-                    <span class="text-success mr-2">{{number_format($weeklyEntries)}}</span>
-                    <span class="text-nowrap">This week</span>
+                    <span class="text-success mr-2"></span>
+                    <span class="text-nowrap"></span>
                   </p>
                 </div>
               </div>
@@ -257,8 +257,8 @@
                     </div>
                   </div>
                   <p class="mt-3 mb-0 text-muted text-sm">
-                    <span class="text-info mr-2">{{number_format($weeklyCards)}}</span>
-                    <span class="text-nowrap">This week</span>
+                    <span class="text-info mr-2"></span>
+                    <span class="text-nowrap"></span>
                   </p>
                 </div>
               </div>
@@ -278,8 +278,8 @@
                     </div>
                   </div>
                   <p class="mt-3 mb-0 text-muted text-sm">
-                    <span class="text-primary mr-2">NGN{{number_format($weeklyRevenue, 2)}}</span>
-                    <span class="text-nowrap">This week</span>
+                    <span class="text-primary mr-2"></span>
+                    <span class="text-nowrap"></span>
                   </p>
                 </div>
               </div>

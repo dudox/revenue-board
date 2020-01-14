@@ -42,9 +42,8 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <!-- Brand -->
-      <a class="navbar-brand pt-0" href="./index.html">
-        <img src="{{config("APP_URL")}}/assets/img/brand/blue.svg" />
-        <img src="{{config("APP_URL")}}/assets/img/brand/mayapro_logo2.png" class="navbar-brand-img" alt="...">
+      <a class="pt-1" href="" class="">
+        <img src="{{config("APP_URL")}}/assets/img/brand/blue.svg" style="margin-left: 1.4em;" width="130em" height="130em">
       </a>
       <!-- User -->
       <ul class="nav align-items-center d-md-none">
