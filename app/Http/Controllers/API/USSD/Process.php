@@ -138,7 +138,7 @@ class Process extends Controller
 
     public function checkValidity()
     {
-        $message = 'Invalid Code supplied';
+        $message = 'Invalid Card supplied';
         $entry = Entry::where('code', $this->text[1])->first();
         if($entry) {
             $expires = $this->getValidity($entry);
@@ -188,11 +188,11 @@ class Process extends Controller
 
     public function useCard()
     {
-        $message = 'You have entered an Invalid Revenue Code';
+        $message = 'You have entered an Invalid Revenue Card';
         $card = Card::where('code', $this->text[1])->first();
         if($card) {
             if($card->status) {
-                $message = 'You have entered a used Revenue Code';
+                $message = 'You have entered a used Revenue Card';
             }
             else {
                 $time = $this->calculateExpiry($card);
@@ -224,14 +224,14 @@ class Process extends Controller
     {
         $card = Card::where('code', $this->text[1])->first();
         if(!$card) {
-            $message = 'You have entered an Invalid Revenue Code';
+            $message = 'You have entered an Invalid Revenue Card';
             echo $this->end($message);
             die;
         }
 
         if($card) {
             if($card->status) {
-                $message = 'You have entered a used Revenue Code';
+                $message = 'You have entered a used Revenue Card';
                 echo $this->end($message);
                 die;
             }
