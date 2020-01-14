@@ -188,11 +188,11 @@ class Process extends Controller
 
     public function useCard()
     {
-        $message = 'You have entered an Invalid Revenue Card';
+        $message = "You have entered an Invalid Revenue Card";
         $card = Card::where('code', $this->text[1])->first();
         if($card) {
             if($card->status) {
-                $message = 'You have entered a used Revenue Card';
+                $message = "You have entered a used Revenue Card";
             }
             else {
                 $time = $this->calculateExpiry($card);
