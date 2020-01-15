@@ -339,7 +339,7 @@ class CardController extends Controller
     {
         $cards = $denomination->cards()->with('denomination');
         if($cards->count() > 0) {
-            $name = number_format($denomination->cost);
+            $name = str_replace(" ", "_", $denomination->cost . ' ' . $denomination->duration->name);
             $this->makeSubDirectory($name);
             $count = 1;
             $counter = 1;

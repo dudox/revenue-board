@@ -61,9 +61,6 @@
                         @endif
                     </select>
                 </div>
-                <div class="input-group input-group-alternative">
-                    <textarea class="form-control" placeholder="Enter Description" name="description" required></textarea>
-                </div>
               </div>
               <div class="text-center">
                 <button type="submit" class="btn btn-primary my-4">Create Denomination</button>

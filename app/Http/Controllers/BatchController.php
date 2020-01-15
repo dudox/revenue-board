@@ -70,7 +70,7 @@ class BatchController extends Controller
         Denomination::create([
             'batch_id' => $request->batch,
             'cost' => $request->cost,
-            'description' => $request->description,
+            // 'description' => $request->description,
             'duration_id' => $request->duration,
             'identifier' => strtoupper(substr(uniqid(), 0, 8)),
         ]);

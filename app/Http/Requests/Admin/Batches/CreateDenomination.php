@@ -26,7 +26,7 @@ class CreateDenomination extends FormRequest
         return [
             'batch' => 'required|exists:batches,id',
             'cost' => 'required|numeric',
-            'description' => 'required',
+            // 'description' => 'required',
             'duration' => 'required|exists:durations,id',
         ];
     }
