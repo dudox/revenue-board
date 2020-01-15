@@ -64,12 +64,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/', function () {
-        return view('welcome');
-    });
-    // Route::get('/home', 'HomeController@index')->name('home');
-
-    Route::group(['prefix' => 'admin'], function () {
-
+        return redirect()->route('admin');
     });
 });
 
