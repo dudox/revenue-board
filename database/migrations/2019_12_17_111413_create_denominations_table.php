@@ -17,7 +17,7 @@ class CreateDenominationsTable extends Migration
             $table->bigIncrements('id');
             $table->string('amount')->default(0);
             $table->integer('batch_id');
-            $table->string('description');
+            $table->string('description')->nullable();
             $table->string('identifier');
             $table->integer('duration_id');
             $table->integer('progress')->default(0);

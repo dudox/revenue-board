@@ -97,7 +97,7 @@
                             <th scope="row">
                                 <div class="media align-items-center">
                                   <div class="media-body">
-                                    <span class="mb-0 text-sm">{{$denomination->cost}}</span>
+                                    <span class="mb-0 text-sm">{{number_format($denomination->cost, 2)}}</span>
                                   </div>
                                 </div>
                               </th>
