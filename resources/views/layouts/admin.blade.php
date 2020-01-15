@@ -23,6 +23,7 @@
     Admin Dashboard
   </title>
   <!-- Favicon -->
+  <link href="{{config("APP_URL")}}/assets/img/brand/favicon.svg" rel="icon" type="image/png">
   <link href="{{config("APP_URL")}}/assets/img/brand/admin.png" rel="icon" type="image/png">
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">

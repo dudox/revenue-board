@@ -23,7 +23,7 @@
     {{env('APP_NAME')}}
   </title>
   <!-- Favicon -->
-  <link href="../assets/img/brand/favicon.png" rel="icon" type="image/png">
+  <link href="../assets/img/brand/favicon.svg" rel="icon" type="image/png">
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
   <!-- Icons -->
@@ -42,7 +42,7 @@
         <div class="row justify-content-center">
         <div class="col-lg-12 col-md-12">
             <img src="../assets/img/brand/blue.svg" width="150em" height="150em" />
-            <h1 class="text-white" style="position: relative; z-index: 100;"> State Informal Tax Collection Platform </h1>
+            <h1 class="text-white" style="position: relative; z-index: 100;"> States Informal Tax Collection Platform </h1>
         </div>
         </div>
     </div>
