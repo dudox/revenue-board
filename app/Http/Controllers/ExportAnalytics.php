@@ -15,7 +15,7 @@ class ExportAnalytics extends Controller
 {
     //
     public $task;
-    public $arrayLimit = 5000;
+    public $arrayLimit = 100000;
     public $codeLimit = 12;
     public $count = 0;
     public $total = 0;

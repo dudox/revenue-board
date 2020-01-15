@@ -18,7 +18,7 @@ use ZanySoft\Zip\Zip;
 
 class CardController extends Controller
 {
-    public $arrayLimit = 100000;
+    public $arrayLimit = 5000;
     public $codeLimit = 12;
     public $count = 0;
     public $total = 0;
