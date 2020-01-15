@@ -42,7 +42,7 @@
         <div class="row justify-content-center">
         <div class="col-lg-12 col-md-12">
             <img src="../assets/img/brand/blue.svg" width="150em" height="150em" />
-            <h1 class="text-white" style="position: relative; z-index: 100;">States Internal Revenue Services Reporting Dashboard</h1>
+            <h1 class="text-white" style="position: relative; z-index: 100;"> State Informal Tax Collection Platform </h1>
         </div>
         </div>
     </div>
