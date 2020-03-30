@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Entry;
 use App\Export;
+use App\Http\Filters\FilterEntries;
 use App\Screen;
 use App\State;
 use Illuminate\Http\Request;
@@ -46,39 +47,21 @@ class HomeController extends Controller
             ->with('earners', $earners);
     }
 
-    public function commission()
+    public function commission(FilterEntries $filter)
     {
-
-        $inputs = auth()->user()->state->entries();
-        $john = auth()->user()->state->entries();
-
-        if(request('from') && request('to')) {
-            $now = new Carbon(request('from'));
-            $later = new Carbon(request('to'));
-            $inputs->whereBetween('created_at', [$now->format('Y-m-d')." 00:00:00", $later->format('Y-m-d')." 23:59:59"]);
-            $john->whereBetween('created_at', [$now->format('Y-m-d')." 00:00:00", $later->format('Y-m-d')." 23:59:59"]);
-        }
-
-        if(request('batch')) {
-            $inputs->where('batch_id', request('batch'));
-            $john->where('batch_id', request('batch'));
-        }
-
-        if(request('denomination')) {
-            $inputs->where('denomination_id', request('denomination'));
-            $john->where('denomination_id', request('denomination'));
-        }
-
         $entryPerMonth= array();
-        // dd($inputs->whereMonth('created_at', "12")->sum("cost"));
         for ($i=1; $i<=12; $i++){
-            $h[] = (string)$i;
-            $entryPerMonth[] = $inputs->whereMonth('created_at', (string)$i)->sum("cost");
+            if(strlen($i) < 2) {
+                $a = '0'.$i;
+            }
+            else {
+                $a = $i;
+            }
+            $entryPerMonth[] = Entry::filter($filter)->where('state_id', auth()->user()->state->id)->whereMonth('created_at', (string)$a)->sum('cost');
         }
-        // dd($entryPerMonth, $h);
 
 
-        $entries = $john->paginate(20);
+        $entries = Entry::filter($filter)->where('state_id', auth()->user()->state->id)->paginate(20);
 
         return view('dashboard.index')
             ->with('entryPerMonth', $entryPerMonth)
