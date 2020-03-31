@@ -23,7 +23,7 @@ class FilterEntries extends Filter
 
     public function to(string $value = null): Builder
     {
-        if(isset($value)) return $this->builder->where('created_at', '<=', new Carbon($value));
+        if(isset($value)) return $this->builder->where('created_at', '=<', new Carbon($value));
         return $this->builder->where('created_at', '!=', null);
     }
 
