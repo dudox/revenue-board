@@ -327,6 +327,7 @@ class CardController extends Controller
             $this->exportAll($batch);
             $this->createArchive('exports/cards/'.$this->zipName);
             if($name == 'denominations.send.all') return back()->with('message', 'Cards exported successfully');
+            if($name == 'denominations.export.one') return back()->with('message', 'Cards exported successfully');
             return response()->json(['message' => 'Cards exported successfully'], 200);
         }
 
@@ -337,6 +338,7 @@ class CardController extends Controller
             $this->exportDenomination($denomination);
             $this->createArchive('exports/cards/'.$this->zipName);
             if($name == 'denominations.send.all') return back()->with('message', 'Cards exported successfully');
+            if($name == 'denominations.export.one') return back()->with('message', 'Cards exported successfully');
             return response()->json(['message' => 'Cards exported successfully'], 200);
         }
     }
