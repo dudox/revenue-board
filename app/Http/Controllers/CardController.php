@@ -13,6 +13,7 @@ use App\Notifications\DownloadExport;
 use App\User;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Route;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 use ZanySoft\Zip\Zip;
 
@@ -315,6 +316,8 @@ class CardController extends Controller
 
     public function export(Batch $batch, int $denomination = 0)
     {
+        $name = Route::currentRouteName();
+
         $this->batch = $batch;
 
         $this->makeDirectory();
@@ -323,6 +326,7 @@ class CardController extends Controller
             // get all batch denominations and export then send email and return response
             $this->exportAll($batch);
             $this->createArchive('exports/cards/'.$this->zipName);
+            if($name == 'denominations.send.all') return back()->with('message', 'Cards exported successfully');
             return response()->json(['message' => 'Cards exported successfully'], 200);
         }
 
@@ -332,6 +336,7 @@ class CardController extends Controller
             if(!$denomination->cards()) return response()->json(['error' => 'No cards found'], 404);
             $this->exportDenomination($denomination);
             $this->createArchive('exports/cards/'.$this->zipName);
+            if($name == 'denominations.send.all') return back()->with('message', 'Cards exported successfully');
             return response()->json(['message' => 'Cards exported successfully'], 200);
         }
     }

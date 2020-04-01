@@ -121,7 +121,7 @@
                                     {{-- <span class="exportcards btn btn-sm btn-primary" onclick="exports({{$denomination->id}})">
                                         Export
                                     </span> --}}
-                                    <a class="btn btn-sm btn-primary" onclick="exports({{$denomination->cost}})" href="{{url('/api/denominations/export')}}/{{$batch->id}}/{{$denomination->id}}">Export</a>
+                                    <a class="btn btn-sm btn-primary" onclick="exports({{$denomination->cost}})" href="{{url('/api/denominations/sendout')}}/{{$batch->id}}/{{$denomination->id}}">Export</a>
                                     {{-- <a class="dropdown-item text-danger" href="#">Delete</a> --}}
                                 </div>
                               </td>

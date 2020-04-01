@@ -26,5 +26,6 @@ Route::group(['prefix' => 'denominations'], function () {
     Route::get('/ongoing/{batch}', 'CardController@ongoing')->name('denominations.ongoing');
     Route::get('/generate/{denomination}/{total}/{batch}', 'CardController@makeDenomination')->name('denominations.ongoing');
     Route::get('/export/{batch}', 'CardController@export')->name('denominations.export.all');
+    Route::get('/sendout/{batch}', 'CardController@export')->name('denominations.send.all');
     Route::get('/export/{batch}/{denomination}', 'CardController@export')->name('denominations.export.one');
 });
