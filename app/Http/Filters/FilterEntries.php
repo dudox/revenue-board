@@ -17,13 +17,15 @@ class FilterEntries extends Filter
      */
     public function from(string $value = null): Builder
     {
-        if(isset($value)) return $this->builder->where('created_at', '>=', new Carbon($value));
+        $value = new Carbon($value);
+        if(isset($value)) return $this->builder->whereDate('created_at', '>=', $value);
         return $this->builder->where('created_at', '!=', null);
     }
 
     public function to(string $value = null): Builder
     {
-        if(isset($value)) return $this->builder->where('created_at', '=<', new Carbon($value));
+        $value = new Carbon($value);
+        if(isset($value)) return $this->builder->whereDate('created_at', '<=', $value);
         return $this->builder->where('created_at', '!=', null);
     }
 

@@ -17,6 +17,12 @@
           <div class="row justify-content-center">
             <div class="col-lg-10 col-md-10">
               <div class="card bg-secondary shadow border-0">
+                @if(session('message'))
+                    <p class="text-success text-center">{{session('message')}}</p>
+                @endif
+                @if(session('error'))
+                    <p class="text-danger text-center">{{session('error')}}</p>
+                @endif
                 <div class="card-header bg-transparent pb-5">
                   <div class="text-muted text-center mt-2 mb-3"><h4>Manage Welcome Screen Messages</h4></div>
                 </div>
@@ -58,6 +64,16 @@
           <div class="row align-items-center">
             <div class="col">
               <h3 class="mb-0">States Revenue Performance</h3>
+            </div>
+            <div class="col">
+                <form class="form-inline" action="{{route('users.data.reset')}}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <input class="form-control" placeholder="input 'confirm' to clear" name="confirm" required/>
+                    <button class="btn btn-danger" style="margin-left: 1em;">
+                        Clear All States and Data
+                    </button>
+                </form>
             </div>
             {{-- <div class="col text-right">
               <a href="#!" class="btn btn-sm btn-primary">See all</a>

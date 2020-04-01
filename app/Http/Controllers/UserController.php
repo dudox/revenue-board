@@ -73,14 +73,33 @@ class UserController extends Controller
     public function deleteAnalytics(State $state)
     {
         if(!request('confirm') || request('confirm') !== 'confirm') return back()->with('error', 'Please input confirm to acknowledge action');
+        $this->deleteRecords($state);
+        return back()->with('message', 'All analytics cleared');
+    }
+
+    public function deleteRecords($state) {
         foreach($state->batches as $batch) {
             $batch->denominations()->delete();
             $batch->entries()->delete();
             $batch->cards()->delete();
             $batch->delete();
         }
+        if($state->user) {
+            if($state->user->exports) {
+                $state->user->exports()->delete();
+            }
+        }
+    }
 
-        $state->user->exports()->delete();
-        return back()->with('message', 'All analytics cleared');
+    public function clearAllAnalytics()
+    {
+        if(!request('confirm') || request('confirm') !== 'confirm') return back()->with('error', 'Please input confirm to acknowledge action');
+        $allStates = State::all();
+        foreach($allStates as $state) {
+            $this->deleteRecords($state);
+        }
+        User::where('admin', 0)->delete();
+        State::whereNotNull('user_id')->update(['user_id' =>  null]);
+        return back()->with('message', 'All Records cleared');
     }
 }
