@@ -43,7 +43,7 @@ class DownloadExport extends Notification
     {
         $data = $this->data;
 
-        $url = env('APP_URL') .'/'. $data->location;
+        $url =  url('/'. $data->location);
         return (new MailMessage)
                     ->subject($data->title)
                     ->greeting('Greetings Admin')
